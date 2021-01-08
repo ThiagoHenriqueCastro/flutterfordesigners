@@ -2,16 +2,13 @@ import 'package:designpluscode/constants.dart';
 import 'package:flutter/material.dart';
 
 class SidebarButton extends StatelessWidget {
-  const SidebarButton({
-    Key key,
-  }) : super(key: key);
+  SidebarButton({@required this.triggerAnimation});
+  final Function triggerAnimation;
 
   @override
   Widget build(BuildContext context) {
     return RawMaterialButton(
-      onPressed: () {
-        print("Sidebar pressed!");
-      },
+      onPressed: triggerAnimation,
       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
       highlightColor: Colors.transparent,
       splashColor: Colors.transparent,
